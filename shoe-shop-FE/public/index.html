@@ -15,7 +15,7 @@
 <body>
     <h1> The Shoe Shop </h1>
     <div class="search_container">
-        <input type="text" class="search" placeholder="search"> 
+        <input type="text" class="search" placeholder="search by brand"> 
         <button id="search_button"> Search</button>
     </div>
     <div id= "results_container">
@@ -26,8 +26,19 @@
         <input type="text" class="name" placeholder="name">
         <input type="text" class="price" placeholder="price">
         <input type="text" class="category" placeholder="category">
-        <button id="add_button"> Add Shoe </button>
-        <button id="delete_button">Remove </button>
+        <div id="button_container">
+            <button id="add_button"> Add Shoe </button>
+            <button id="delete_button">Remove </button>
+        </div>
+      
+    </div>
+    <div id="update_container">
+        <input type="text"class='id' placeholder="shoe id">
+        <input type="text" class="brandUpdate" placeholder="update brand">
+        <input type="text" class="nameUpdate" placeholder="update name">
+        <input type="text" class="priceUpdate" placeholder="update price">
+        <input type="text" class="categoryUpdate" placeholder="update category">
+        <button id="update_button">Update</button>
 
     </div>
     

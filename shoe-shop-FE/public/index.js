@@ -32,7 +32,7 @@ function addResultsToDOM(data){
     }
 }
 
-//add event listener to add shoe to pull input fields and create new shoe
+//event listener to add new shoe to pull input fields and create new shoe
 document.querySelector("#add_button").addEventListener("click",()=>{
     let shoeBrand = document.querySelector('.brand').value;
     let shoeName = document.querySelector('.name').value;
@@ -67,7 +67,7 @@ document.querySelector("#add_button").addEventListener("click",()=>{
         }
     })
 
-//add eventlistener to delete shoe from page
+//eventlistener to search by brand
 document.querySelector("#search_button").addEventListener("click", ()=>{
     let shoeSearch= document.querySelector(".search").value;
     fetch(`${ApiUrl}/api/shoes/brand/${shoeSearch}`, {
@@ -83,5 +83,44 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
     .catcher(err=>console.log(err));
 });
 
+//eventlistener to update shoe in database by ID  
+document.querySelector('#update_button').addEventListener("click",()=>{
+    let shoeId = document.querySelector('.id').value;
+    let shoeBrand = document.querySelector('.brandUpdate').value;
+    let shoeName = document.querySelector('.nameUpdate').value;
+    let shoePrice = document.querySelector('.priceUpdate').value;
+    let shoeCategory = document.querySelector('.categoryUpdate').value;
+
+    let inputId = Number(shoeId);
+
+
+    let updatedShoe = {
+        'brand':shoeBrand,
+        'name':shoeName,
+        'price':Number(shoePrice),
+        'category':shoeCategory
+    }
+
+    if(shoeId == '' && shoeBrand == '' && shoeName =='' && shoePrice == '' && shoeCategory == ''){
+        console.error('error');
+    }else{
+        fetch(`${ApiUrl}/api/shoes/${inputId}`, {
+            method:'PATCH',
+            mode:'cors',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(updatedShoe)
+        })
+        .then(response=>{
+            if(response.status == 200){
+                alert(`successfully updated shoe information for ${inputId} as ${updatedShoe.brand}, ${updatedShoe.name}, price:$${updatedShoe.price}.00, ${updatedShoe.category}`)
+            }else{
+                alert("something went wrong!", response);
+                }
+            })
+        }
+    })
+
+//eventlistener to delete 
+document
 
 pullAPIdata();

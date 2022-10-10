@@ -107,7 +107,7 @@ app.delete('/api/shoes/:id', (req,res)=>{
 //route to patch shoe in database by id
 app.patch('/api/shoes/:id', (req,res)=>{
     let shoeUpdate = req.body;
-    if(newShoe.brand && newShoe.name && newShoe.price && newShoe.category && typeof newShoe.price == 'number' && newShoe.brand.length != 0 && newShoe.name.length != 0 && newShoe.price.length != 0 && newShoe.category.length != 0){
+    if(shoeUpdate.brand && shoeUpdate.name && shoeUpdate.price && shoeUpdate.category && typeof shoeUpdate.price == 'number' && shoeUpdate.brand.length != 0 && shoeUpdate.name.length != 0 && shoeUpdate.price.length != 0 && shoeUpdate.category.length != 0){
         client.query(`UPDATE shoes SET brand = '${shoeUpdate.brand}', name = '${shoeUpdate.name}', price = ${shoeUpdate.price}, category = '${shoeUpdate.category}' WHERE id = ${req.params.id}`)
         .then(results=>{
             res.status(200); 
