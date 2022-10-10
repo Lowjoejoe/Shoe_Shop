@@ -52,7 +52,7 @@ app.get('/api/shoes/:id', (req,res,err)=>{
 });
 
 //route to post new shoes to database
-app.post('/api/shoes/', (req,res)=>{
+app.post('/api/shoes', (req,res)=>{
     let newShoe = req.body; 
     if(newShoe.brand && newShoe.name && newShoe.price && newShoe.category && typeof newShoe.price == 'number' && newShoe.brand.length != 0 && newShoe.name.length != 0 && newShoe.price.length != 0 && newShoe.category.length != 0){
      client.query(`INSERT INTO shoes (brand,name,price,category) VALUES ('${newShoe.brand}','${newShoe.name}',${newShoe.price},'${newShoe.category}')`,   
