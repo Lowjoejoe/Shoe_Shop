@@ -66,6 +66,22 @@ document.querySelector("#add_button").addEventListener("click",()=>{
             })
         }
     })
-    
+
+//add eventlistener to delete shoe from page
+document.querySelector("#search_button").addEventListener("click", ()=>{
+    let shoeSearch= document.querySelector(".search").value;
+    fetch(`${ApiUrl}/api/shoes/brand/${shoeSearch}`, {
+        method: 'GET',
+        mode:'cors',
+        headers:{'Content-Type':'application/json'},
+    })
+    .then((response)=>response.json())
+    .then((data)=>{
+        console.log(data);
+        addResultsToDOM(data);
+    })
+    .catcher(err=>console.log(err));
+});
+
 
 pullAPIdata();
