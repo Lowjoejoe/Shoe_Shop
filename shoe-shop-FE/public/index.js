@@ -121,6 +121,38 @@ document.querySelector('#update_button').addEventListener("click",()=>{
     })
 
 //eventlistener to delete 
-document
+document.querySelector('#delete_button').addEventListener("click",()=>{
+    let shoeId = document.querySelector('.id').value;
+    let shoeBrand = document.querySelector('.brandUpdate').value;
+    let shoeName = document.querySelector('.nameUpdate').value;
+    let shoePrice = document.querySelector('.priceUpdate').value;
+    let shoeCategory = document.querySelector('.categoryUpdate').value;
+
+    let inputId = Number(shoeId);
+
+    let updatedShoe = {
+        'brand':shoeBrand,
+        'name':shoeName,
+        'price':Number(shoePrice),
+        'category':shoeCategory
+    }
+
+    if(shoeId == ''){
+        console.error('error');
+    }else{
+        fetch(`${ApiUrl}/api/shoes/${inputId}`, {
+            method:'DELETE',
+            mode:'cors',
+            headers: {'Content-Type':'application/json'}
+        })
+        .then(response=>{
+            if(response.status == 200){
+                alert(`successfully deleted shoeID:${inputId}!shoe information ${updatedShoe.brand}, ${updatedShoe.name}, price:$${updatedShoe.price}.00, ${updatedShoe.category} removed from the database.`)
+            }else{
+                alert("something went wrong!", response);
+                }
+            })
+        }
+    })
 
 pullAPIdata();
