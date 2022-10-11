@@ -1,3 +1,177 @@
 button{
     font-size:12px,
 }
+
+
+body{
+width: 900px;
+margin: 0 auto;
+background-image:url(./shoeWall.jpg);
+background-position: center center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+padding: 10px;
+
+}
+
+h1{
+    background-color:rgba(0, 0, 0, 0.649);
+    color: whitesmoke;
+    max-width: 300px;
+    align-content: center;
+    text-shadow: 1px 1px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 500px;
+
+}
+.search_container{
+    background-color: rgba(206, 23, 23, 0.738);
+    border-radius: 5px/10px;
+    overflow: hidden;
+    justify-content: center center;
+    align-items: center center;
+    margin: 0 auto;
+    margin-top: 10px;
+    max-width: 650px;
+    height: 60px;
+    
+
+}
+
+    .search{
+        float:left;
+        margin: 15px;
+        font-size: 15pt;
+
+    }
+
+    #filter_shoe_select{
+        float:left;
+        margin: 15px;
+        font-size: 15pt;
+    }
+
+    #refresh_button{
+        float:right;
+        margin: 15px;
+        font-size: 15pt;
+    }
+
+    #search_button {
+        float:right;
+        margin: 15px;
+        font-size: 15pt;
+    }
+
+#view_container{
+    display:flex;
+    flex-direction:row-reverse;
+    padding:10px;
+
+}
+
+    #edit_container{
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 250px;
+        height: 500px;
+        padding:10px;
+        margin:0 auto;
+        order: 1;
+    }
+
+        #input_container{
+            border-radius: 5px/10px;
+            background-color:rgba(0, 0, 0, 0.801);
+            width: 250px;
+            height: 200px;
+            padding:10px;
+            display:flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            align-content: center center;
+        
+        }
+            input{
+                border: 1px solid black;
+                margin: 0 auto;
+                padding: 2pt;
+                height: 25px;
+                font-size: 15px;
+            }
+        
+            #add_button{
+                margin: 0 auto;
+                padding: 1px;
+                font-size: 16px;
+                font-weight: 200;
+                size: 30px;
+            }
+    
+        #update_container{
+            background-color: rgba(206, 23, 23, 0.902);
+            border-radius: 5px/10px;
+            width: 250px;
+            height: 200px;
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+            #button_container{
+                margin: 0 auto;
+                display: flex;
+                
+
+            }
+
+                #update_button{
+                    display:flex;
+                    margin: 0 auto;
+                    padding: 1px;
+                    font-size: 16px;
+                    font-weight: 200;
+                    size: 30px;
+                }
+
+                #delete_button{
+                    display:flex;
+                    margin: 0 auto;
+                    padding: 1px;
+                    font-size: 16px;
+                    font-weight: 200;
+                    size: 30px;
+                }
+#results_container{
+    order:-1;
+    display:flex;
+    flex-direction: column;
+    color: whitesmoke;
+    font-size:15pt;
+    justify-content: flex-start;
+    margin:0 auto;
+    background-color: rgba(13, 109, 227, 0);
+    max-width: 300px;
+    max-height: 550px;
+    padding: 10px;
+    overflow: auto;
+   
+    
+
+}
+
+    li{
+        border-radius: 5px/10px;
+        padding: 4px;
+       background-color: rgba(0, 0, 0, 0.907);
+       border:1px solid whitesmoke;
+    }
