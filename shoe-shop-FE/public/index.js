@@ -1,5 +1,5 @@
-//const ENV = "production";
-const ENV = "dev"; 
+const ENV = "production";
+//const ENV = "dev"; 
 
 var resultArea = document.querySelector('.shoes');
 

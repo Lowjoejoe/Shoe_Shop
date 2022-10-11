@@ -5,7 +5,7 @@ const cors = require('cors');
 const {Client} = require('pg'); 
 const config = require('./config.js')[process.env.NODE_ENV ||"dev"]
 
-const PORT = 3000; //config.port
+const PORT =config.port //3000 for running locally
 
 const client = new Client ({
     connectionString: config.connectionString,
