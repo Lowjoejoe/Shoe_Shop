@@ -67,6 +67,23 @@ app.get('/api/shoes/brand/:brand', (req,res,err)=>{
     .catch((err)=>console.log('error'));
 });
 
+//route to get shoe by category 
+app.get('/api/shoes/category/:category',(req,res,err)=>{
+    let category = req.params.category
+    client.query(`SELECT * FROM shoes WHERE category = '${category}'`)
+    .then(results=>{
+        if(results.rows.length == 0){
+            res.status(404);
+            res.send(`shoe category not found in database`);
+            return;
+        }
+            res.status(200);
+            res.send(results.rows);
+        })
+
+    });
+
+    
 //route to post new shoes to database
 app.post('/api/shoes', (req,res)=>{
     let newShoe = req.body; 
