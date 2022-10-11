@@ -32,6 +32,11 @@ function addResultsToDOM(data){
     }
 }
 
+//Refresh button to refresh list of shoes
+document.querySelector('#refresh_button').addEventListener("click", ()=>{
+    pullAPIdata();
+})
+
 //event listener to add new shoe to pull input fields and create new shoe
 document.querySelector("#add_button").addEventListener("click",()=>{
     let shoeBrand = document.querySelector('.brand').value;
@@ -82,6 +87,8 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
     })
     .catcher(err=>console.log(err));
 });
+
+
 
 //eventlistener to update shoe in database by ID  
 document.querySelector('#update_button').addEventListener("click",()=>{
