@@ -19,7 +19,7 @@ function pullAPIdata() {
         console.log(data);
         addResultsToDOM(data);
     })
-    .catcher(err=>console.log(err));
+    .catch(err=>console.log(err));
 }
 
 //Add data to the DOM 
@@ -85,7 +85,7 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
         console.log(data);
         addResultsToDOM(data);
     })
-    .catcher(err=>console.log(err));
+    .catch(err=>console.log(err));
 });
 
 //Filter return using selector drop down
@@ -103,7 +103,7 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
         console.log(data);
         addResultsToDOM(data);
     })
-    .catcher(err=>console.log(err));
+    .catch(err=>console.log(err));
 
     }else if(shoeFilter == "category"){ 
     fetch(`${ApiUrl}/api/shoes/category/${shoeSearch}`, {
@@ -116,7 +116,7 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
         console.log(data);
         addResultsToDOM(data);
     })
-    .catcher(err=>console.log(err));
+    .catch(err=>console.log(err));
 
     }else{
         pullAPIdata();
