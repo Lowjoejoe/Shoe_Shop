@@ -16,8 +16,14 @@
     <h1> The Shoe Shop </h1>
     <div class="search_container">
         <input type="text" class="search" placeholder="search by brand"> 
+        <select id="filter_shoe_select">
+            <option id="blank"></option>
+            <option id="filter_brand">brand</option>
+            <option id="filter_category">category</option>
+        </select>
         <button id="search_button"> Search</button>
         <button id="refresh_button">Refresh</button>
+
     </div>
     <div id= "results_container">
         <div class="shoes">Results</div> 
