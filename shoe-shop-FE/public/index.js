@@ -3,7 +3,7 @@ const ENV = "production";
 
 var resultArea = document.querySelector('.shoes');
 
-let ApiUrl = ENV == "dev" ? 'http://localhost:3000': 'get URL from render.com';
+let ApiUrl = ENV == "dev" ? 'http://localhost:3000': 'https://shoe-shop-api-server.onrender.com';
 console.log('API:', ApiUrl);
 
 
