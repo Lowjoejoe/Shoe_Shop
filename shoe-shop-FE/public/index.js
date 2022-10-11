@@ -88,6 +88,41 @@ document.querySelector("#search_button").addEventListener("click", ()=>{
     .catcher(err=>console.log(err));
 });
 
+//Filter return using selector drop down
+document.querySelector("#search_button").addEventListener("click", ()=>{
+    let shoeFilter = document.querySelector("#filter_shoe_select").value;
+    let shoeSearch= document.querySelector(".search").value;
+    if(shoeFilter == "brand"){
+    fetch(`${ApiUrl}/api/shoes/brand/${shoeSearch}`, {
+        method: 'GET',
+        mode:'cors',
+        headers:{'Content-Type':'application/json'},
+    })
+    .then((response)=>response.json())
+    .then((data)=>{
+        console.log(data);
+        addResultsToDOM(data);
+    })
+    .catcher(err=>console.log(err));
+
+    }else if(shoeFilter == "category"){ 
+    fetch(`${ApiUrl}/api/shoes/category/${shoeSearch}`, {
+        method: 'GET',
+        mode:'cors',
+        headers:{'Content-Type':'application/json'},
+    })
+    .then((response)=>response.json())
+    .then((data)=>{
+        console.log(data);
+        addResultsToDOM(data);
+    })
+    .catcher(err=>console.log(err));
+
+    }else{
+        pullAPIdata();
+    }
+
+});
 
 
 //eventlistener to update shoe in database by ID  
